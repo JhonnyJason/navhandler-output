@@ -390,7 +390,7 @@ export var toBase = async function(newBase, context) {
     throw new Error("In navhandler.toBase `newBase` must a string!");
   }
   await escapeVoidState();
-  oldBase = state.base;
+  oldBase = navState.base;
   oldMod = navState.modifier;
   //# If we already have the same base state then we can replace that state
   if (oldBase === newBase) {
