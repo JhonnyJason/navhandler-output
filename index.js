@@ -437,6 +437,9 @@ export var toBaseAt = async function(newBase, context, depth) {
   if (depth === 0) {
     throw new Error("Depth cannot be 0!");
   }
+  if (depth === (oldDepth + 1)) {
+    return toBase(newBase, context); //# when we want it as next state we can directly navigate to there
+  }
   if (depth > oldDepth) {
     throw new Error("Our current depth is before the the newly specified depth. We don't dare to jump unto the unknown future!");
   }
